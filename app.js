@@ -2,6 +2,7 @@
 
 /* global app */
 var express = require('express');
+var i18n = require('i18n');
 var debug = require('debug')('portal:app');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -50,6 +51,14 @@ var sessionArgs = {
     }
 };
 
+i18n.configure({
+    locales: ['en','fr'],
+    defaultLocale: "en",
+    extension: ".json",
+    directory: "./locales",
+    debug: true
+});
+
 var app = express();
 app.initialized = false;
 app.initState = 'Starting up...';
@@ -58,6 +67,7 @@ app.isProduction = true;
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+app.use(i18n.init);
 
 // Correlation ID
 app.use(correlationIdHandler);

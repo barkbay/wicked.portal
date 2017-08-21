@@ -1,0 +1,21 @@
+{
+    "not.logged.in": "Not logged in",
+    "login" : "Log in",
+    "signup" : "Sign up",
+
+    "applications.title": "Your applications",
+    "applications.about" : "An application is the entity to which you attach your API subscriptions. You can own or co-own applications with other developers.",
+    "applications.not.logged.in": "Applications can only be created if you are logged in.",
+    "applications.register.title" : "Register a new Application",
+    "applications.app.id" : "App ID",
+    "applications.app.id.description" : "Application IDs must be all lower case, and may only contain the following characters: a-z, 0-9, -, _",
+    "applications.app.name" : "A human readable description/name of the your application, e.g. 'My Awesome Application'",
+    "applications.register" : "Register Application",
+    "applications.app.name.title" : "App Name",
+    "applications.noapps" : "You don't have any registered applications",
+    "applications.oauth" : "This application will use OAuth2.0 Flows (other than the Client Credentials flow, i.e. using redirects)",
+    "applications.callback.description" : "The callback under which your web application can be called back, passing the access token in the fragment. <b>Must be an <code>https://</code> URI</b>, except for testing purposes, for which also <code>http://localhost</code> is accepted.",
+    "applications.review.owners" : "To review owners, view API keys for this application or to unregister an application, please click the application name.",
+
+    "application.description" : "This page lets you administer the owners of this application. You can add and remove co-owners of the application. New co-owners must be already be registered in the portal in order to make them co-owners of the application."
+}

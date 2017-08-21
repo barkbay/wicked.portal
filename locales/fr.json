@@ -1,0 +1,21 @@
+{
+	"login": "Se connecter",
+	"signup": "Créer un compte",
+    "not.logged.in": "Vous n'êtes pas connecté",
+
+	"applications.title": "Vos Applications",
+	"applications.about": "Les applications sont attachées à vos souscriptions d'API. Elles vous appartiennent à vous et peuvent être partagées avec d'autres développeurs.",
+	"applications.not.logged.in": "Vous ne pouvez déclarer une application que si vous êtes connecté.",
+	"applications.register.title": "Enregistrer une nouvelle application",
+	"applications.app.id": "Identifiant",
+	"applications.app.id.description": "Un identifiant technique pour votre application, en minuscule, les caractères autorisés sont : a-z, 0-9, -, _",
+	"applications.app.name": "Un nom pour votre application, e.g. Ma Super Application'",
+	"applications.register" : "Enregistrer cette application",
+	"applications.app.name.title" : "Nom de l'application",
+	"applications.noapps" : "Vous n'avez aucune application",
+	"applications.oauth" : "Cette application utilise un flux OAuth2.0 (différent du flux Client Credentials, c'est à dire utilisant des redirections)",
+	"applications.callback.description" : "L'URI de retour à laquelle votre application peut être rappelée, en passant le jeton d'accès dans le fragment. <b>Doit être <code>https://</code> URI</b>, sauf à des fins de test, pour lesquels <code>http://localhost</code> est aussi accepté.",
+	"applications.review.owners" : "Pour voir les propriétaires, les clés d'API de cette application ou pour supprimer une application, veuillez cliquer sur le nom de l'application.",
+
+	"application.description" : "Cette page vous permet d'administrer l'application. Vous pouvez ajouter ou supprimer des propriétaires. Les nouveaux propriétaires doivent déjà être inscrits sur ce portail."
+}

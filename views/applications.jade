@@ -3,68 +3,65 @@ extends layout
 block content
     .jumbotron.wicked-application-title
         .container.wicked-title-container
-            h1 Your Applications
+            h1= __('applications.title')
 
             p= glob.views.applications.titleTagline
 
     .container.wicked-container
 
         p.
-            An application is the entity to which you attach your API subscriptions. You can own or co-own
-            applications with other developers.
+            #{__('applications.about')}
 
         if !authUser
             .panel.panel-danger
                 .panel-heading
-                    h4.panel-title Not logged in
+                    h4.panel-title #{__('not.logged.in')}
                 .panel-body
-                    p You are not logged in. Applications can only be created if you are logged in.
+                    p #{__('not.logged.in')}. #{__('applications.not.logged.in')}
 
-                    a(href="/login?redirect=/applications").btn.btn-default Log in &raquo;
+                    a(href="/login?redirect=/applications").btn.btn-default #{__('login')} &raquo;
                     | &nbsp;&nbsp;
-                    a(href="/signup").btn.btn-default Sign up &raquo;
+                    a(href="/signup").btn.btn-default #{__('signup')} &raquo;
 
         else
+            - var applications_register_title = __("applications.register.title")
             .panel-group
                 div(class='panel panel-default')
                     .panel-heading
-                        +panelTitle('Register a new Application', '/help/applications', '#collapse')
+                        +panelTitle(applications_register_title, '/help/applications', '#collapse')
                     div(id='collapse' class='panel-collapse collapse #{showRegister}')
                         .panel-body
                             form(role='form' action='/applications/register' method='POST')
                                 .form-group
-                                    label(for='appid') App ID:
+                                    label(for='appid') #{__('applications.app.id')}:
                                     input(type='string' name='appid').form-control
-                                    small Application IDs must be all lower case, and may only contain the following characters: a-z, 0-9, -, _
+                                    small #{__('applications.app.id.description')}
                                 .form-group
-                                    label(for='appname') App Name:
+                                    label(for='appname') #{__('applications.app.name.title')}:
                                     input(type='string' name='appname').form-control
-                                    small A human readable description/name of the your application, e.g. 'My Awesome Application'
+                                    small #{__('applications.app.name')}
 
                                 .checkbox
                                     label
                                         input(type='checkbox' name='hasredirecturi' data-toggle='collapse' data-target='#redirecturipanel')
-                                        strong This application will use OAuth2.0 Flows
-                                        | &nbsp;(other than the Client Credentials flow, i.e. using redirects)
+                                        strong #{__('applications.oauth')}
 
                                 div(id='redirecturipanel' class='panel-collapse collapse')
                                     .form-group
                                         label(for='redirecturi') Redirect URI:
                                         input(type='string' name='redirecturi' value='https://').form-control
-                                        small.
-                                            The callback under which your web application can be called back, passing the access token in the fragment.
-                                            <b>Must be an <code>https://</code> URI</b>, except for testing purposes, for which also <code>http://localhost</code> is accepted.
+                                        small.!=__('applications.callback.description')
 
                                 p
-                                    button(type='submit').btn.btn-success Register Application
+                                    button(type='submit').btn.btn-success #{__('applications.register')}
 
             hr
 
             if applications.length == 0
                 br
-                h4 You don't have any registered applications
+                h4 #{__('applications.noapps')}
             else
-                p To review owners, view API keys for this application or to unregister an application, please click the application name.
+                p #{__('applications.review.owners')}
 
                 table.table.table-striped
                     thead
